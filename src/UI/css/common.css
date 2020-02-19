@@ -210,7 +210,9 @@ tr:hover{
 .button_login:hover, .button_login:focus ,.button_accedi{
   background-color: rgba(97, 34, 185, 0.83);
 }
+#inputrusu{
 
+}
 
 .tendina {
   position: absolute;

@@ -1,9 +1,10 @@
-
 function Show_Tendina() {
     document.getElementById("Tendina").classList.toggle("show");
 }
 
+
     $(document).ready(
+
   function(){
 
     $(".websearch").click(
