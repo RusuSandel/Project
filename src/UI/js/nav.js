@@ -321,6 +321,7 @@ $(document).ready(
                   dataType: "text",
                   contentType: "application/json",
                   success: function(data) {
+                     alert("Autore inserito");
                     console.log(data);
                   },
                   error: function(xhr, ajaxOptions, thrownError) {
