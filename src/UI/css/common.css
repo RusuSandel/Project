@@ -162,24 +162,17 @@ tr:hover{
 }
 
 #username{
-  position: fixed;
-  right: 330px;
-  top: 13px;
+  position: relative;
+
   height: 20px;
   line-height: 20px;
-  top: 18px;
   width: 210px;
   border-radius: 3px;
 }
 
 #password{
-  position: fixed;
-  right: 90px;
-  top: 13px;
-  height: 30px;
+  position: relative;
   line-height: 20px;
-  top: 18px;
-  width: 50px;
   border-radius: 3px;
 }
 

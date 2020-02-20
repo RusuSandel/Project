@@ -40,7 +40,7 @@ $(document).ready(
     }
 
 
-    $(".fa-user").click(
+    $("#accedi").click(
       function(){
         if (logged == false) {
           logged = true;
