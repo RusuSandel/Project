@@ -163,17 +163,19 @@ tr:hover{
 
 #username{
   position: relative;
-
+  left: 10px;
   height: 20px;
   line-height: 20px;
-  width: 210px;
+  width: 160px;
   border-radius: 3px;
 }
 
 #password{
   position: relative;
+  left: 10px;
   line-height: 20px;
   border-radius: 3px;
+  width: 160px;
 }
 
 #usernametext{
@@ -200,7 +202,7 @@ tr:hover{
   cursor: pointer;
   border: 2px solid #F2F2F2;
 }
-.button_login:hover, .button_login:focus ,.button_accedi{
+.button_login:hover, .button_login:focus ,#accedi:hover{
   background-color: rgba(97, 34, 185, 0.83);
 }
 #inputrusu{
@@ -240,11 +242,14 @@ tr:hover{
   max-width: 100px;
 }
 
-.button_accedi_tendina{
+#accedi{
 
   position: relative;
-  max-height: 30px;
-  max-width: 45px;
+  background:#dcdcdc;
+  font-family: 'Righteous', cursive;
+  border-radius: 10px;
+  text-align: center;
+  left: 10px;
 
 
 }
