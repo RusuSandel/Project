@@ -321,7 +321,8 @@ $(document).ready(
                   dataType: "text",
                   contentType: "application/json",
                   success: function(data) {
-                     alert("Operazione Completata");
+                      alert("Operazione Completata");
+                      //test nav.js
                     console.log(data);
                   },
                   error: function(xhr, ajaxOptions, thrownError) {
