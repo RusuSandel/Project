@@ -1,6 +1,6 @@
+//test 20/02/20
 $(document).ready(
   function() {
-
     $(".navlinks").click(
       function() {
         var cliccato = $(this).attr('pagina');
@@ -321,7 +321,7 @@ $(document).ready(
                   dataType: "text",
                   contentType: "application/json",
                   success: function(data) {
-                     alert("Autore inserito");
+                     alert("Operazione Completata");
                     console.log(data);
                   },
                   error: function(xhr, ajaxOptions, thrownError) {
