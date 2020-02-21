@@ -1,7 +1,6 @@
 $(document).ready(
   function(){
     $("#ricercamenu").show();
-    //$("#editmenu").hide();
     $("main").html("<div id=\"content\"></div>");
     var utente;
     var logged = false;
@@ -108,6 +107,7 @@ $(document).ready(
         }
       }
     );
-
   }
+
+
 );

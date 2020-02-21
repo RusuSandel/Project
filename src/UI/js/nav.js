@@ -1,5 +1,6 @@
 //test 20/02/20
 $(document).ready(
+
   function() {
     $(".navlinks").click(
       function() {
