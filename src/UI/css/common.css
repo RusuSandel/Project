@@ -163,7 +163,6 @@ tr:hover{
 
 #username{
   position: relative;
-
   height: 20px;
   line-height: 20px;
   width: 210px;
@@ -203,10 +202,6 @@ tr:hover{
 .button_login:hover, .button_login:focus ,.button_accedi{
   background-color: rgba(97, 34, 185, 0.83);
 }
-#inputrusu{
-
-}
-
 .tendina {
   position: absolute;
   right: 150px;
@@ -227,12 +222,7 @@ tr:hover{
   border-radius: 10%;
 }
 
-
-
 .show {display:block;}
-
-
-
 
 .tbox_tendina{
   position: relative;
@@ -241,10 +231,8 @@ tr:hover{
 }
 
 .button_accedi_tendina{
-
   position: relative;
   max-height: 30px;
   max-width: 45px;
-
 
 }
