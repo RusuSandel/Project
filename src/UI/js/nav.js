@@ -575,7 +575,142 @@ $(document).ready(
               }
             );
             break;
-          default:
+            case "Autori":
+                $("main").html("<div id=\"content\"></div>");
+                $("#content").append(cercaAutori);
+                $("#autorisubmit").click(
+                    function() {
+                        var autore = {};
+                        autore.Id = $("#AutoreId").val();
+                        autore.Nome = $("#AutoreNome").val();
+                        autore.Cognome = $("#AutoreCognome").val();
+                        autore.NascitaDa = $("#AutoreNascitaDa").val();
+                        autore.NascitaA = $("#AutoreNascitaA").val();
+                        autore.MorteDa = $("#AutoreMorteDa").val();
+                        autore.MorteA = $("#AutoreMorteA").val();
+                        if ($("#AutoreNascitaDa").val() == "") {
+                            autore.NascitaDa = "0001-01-01"
+                        }
+                        if ($("#AutoreNascitaA").val() == "") {
+                            autore.NascitaA = "9999-01-01"
+                        }
+                        if ($("#AutoreMorteDa").val() == "") {
+                            autore.MorteDa = "0001-01-01"
+                        }
+                        if ($("#AutoreMorteA").val() == "") {
+                            autore.MorteA = "9999-01-01"
+                        }
+                        console.log(JSON.stringify(autore));
+                        $.ajax({
+                            type: "GET",
+                            url: "../WebAPI/Autori/controller.php",
+                            dataType: "json",
+                            data: {
+                                id: autore.Id,
+                                nome: autore.Nome,
+                                cognome: autore.Cognome,
+                                dataNDA: autore.NascitaDa,
+                                dataNA: autore.NascitaA,
+                                dataMDA: autore.MorteDa,
+                                dataMA: autore.MorteA
+                            },
+                            success: function(data) {
+                                console.log(data);
+                                $("main").html("<table></table>");
+                                $.each(data, function(index, element) {
+                                    $("table").append("<tr id=\"" + element.Id + "\">" + "<td>" + element.Id + "</td>" + "<td>" + element.Nome + "</td>" + "<td>" + element.Cognome + "</td>" + "<td>" + element.DataNascita + "</td>" + "<td>" + element.DataMorte + "</td>" + "<td>" + "<i class=\"fas fa-hand-holding prestito\" numero=\"" + element.Id + "\"></i>" + "<td>" + "<i class=\"fas fa-edit modifica\" numero=\"" + element.Id + "\"></i>" + "<td>" + "<i class=\"fas fa-times elimina\" numero=\"" + element.Id + "\"></i>" + "</tr>");
+                                });
+                                $(".modifica").click(
+                                    function() {
+                                        console.log("modifica: " + $(this).attr('numero'));
+                                        var idmod = $(this).attr('numero');
+                                        $("main").html("<div id=\"content\"></div>");
+                                        $("#content").append(editAutori);
+                                        $("button").html("Modifica Autore ID: " + idmod);
+                                        var autore = {};
+                                        autore.Id = idmod;
+                                        autore.Nome = "";
+                                        autore.Cognome = "";
+                                        autore.NascitaDa = "";
+                                        autore.NascitaA = "";
+                                        autore.MorteDa = "";
+                                        autore.MorteA = "";
+                                        console.log(JSON.stringify(autore));
+                                        $.ajax({
+                                            type: "GET",
+                                            url: "../WebAPI/Autori/controller.php",
+                                            dataType: "json",
+                                            data: {
+                                                id: autore.Id,
+                                                nome: autore.Nome,
+                                                cognome: autore.Cognome,
+                                                dataNDA: autore.NascitaDa,
+                                                dataNA: autore.NascitaA,
+                                                dataMDA: autore.MorteDa,
+                                                dataMA: autore.MorteA
+                                            },
+                                            success: function(data) {
+                                                console.log(data);
+                                                $("#AutoreNome").val(data[0].Nome);
+                                                $("#AutoreCognome").val(data[0].Cognome);
+                                                $("#AutoreNascita").val(data[0].DataNascita.split(" ")[0]);
+                                                $("#AutoreMorte").val(data[0].DataMorte.split(" ")[0]);
+                                            },
+                                            error: function(xhr, ajaxOptions, thrownError) {
+                                                console.log(xhr.status);
+                                                console.log(thrownError);
+                                            }
+                                        });
+                                        $(".submitsearch").click(
+                                            function() {
+                                                var autore = {};
+                                                autore.Id = idmod;
+                                                autore.Nome = $("#AutoreNome").val();
+                                                autore.Cognome = $("#AutoreCognome").val();
+                                                autore.DataDiNascita = $("#AutoreNascita").val();
+                                                autore.DataDiMorte = $("#AutoreNascita").val();
+                                                console.log(JSON.stringify(autore));
+                                                $.ajax({
+                                                    type: "POST",
+                                                    url: "../WebAPI/Autori/controller.php",
+                                                    data: JSON.stringify(autore),
+                                                    dataType: "text",
+                                                    contentType: "application/json",
+                                                    success: function(data) {
+                                                        console.log(data);
+                                                    },
+                                                    error: function(xhr, ajaxOptions, thrownError) {
+                                                        console.log(xhr.status);
+                                                        console.log(thrownError);
+                                                    }
+                                                });
+                                            }
+                                        );
+                                    }
+                                );
+                                $(".elimina").click(
+                                    function() {
+                                        $(this).parent().parent().remove();
+                                        console.log($(this).attr('numero'));
+                                        $.ajax({
+                                            type: "DELETE",
+                                            url: "../WebAPI/Autori/controller.php?id=" + $(this).attr('numero'),
+                                            success: function() {
+                                                console.log("eliminato");
+                                            }
+                                        });
+                                    }
+                                );
+                            },
+                            error: function(xhr, ajaxOptions, thrownError) {
+                                console.log(xhr.status);
+                                console.log(thrownError);
+                            }
+                        });
+                    }
+                );
+
+            default:
 
         }
       }
