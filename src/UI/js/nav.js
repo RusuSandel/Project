@@ -110,6 +110,7 @@ $(document).ready(
                               dataType: "text",
                               contentType: "application/json",
                               success: function(data) {
+                                  alert("Autore inserito correttamente")//alert per validare l'operazione
                                 console.log(data);
                               },
                               error: function(xhr, ajaxOptions, thrownError) {
@@ -129,6 +130,7 @@ $(document).ready(
                           type: "DELETE",
                           url: "../WebAPI/Autori/controller.php?id=" + $(this).attr('numero'),
                           success: function() {
+                              alert()
                             console.log("eliminato");
                           }
                         });
@@ -258,6 +260,7 @@ $(document).ready(
                               dataType: "text",
                               contentType: "application/json",
                               success: function(data) {
+                                  alert("operazione completata")
                                 console.log(data);
                               },
                               error: function(xhr, ajaxOptions, thrownError) {
@@ -277,7 +280,8 @@ $(document).ready(
                           type: "DELETE",
                           url: "../WebAPI/CaseEditrici/controller.php?id=" + $(this).attr('numero'),
                           success: function() {
-                            console.log("eliminato");
+                              alert("operazione completata")
+                              console.log("eliminato");
                           }
                         });
                       }
@@ -323,7 +327,6 @@ $(document).ready(
                   contentType: "application/json",
                   success: function(data) {
                       alert("Operazione Completata");
-                      //test nav.js
                     console.log(data);
                   },
                   error: function(xhr, ajaxOptions, thrownError) {
