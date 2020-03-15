@@ -33,7 +33,7 @@ function Create($jsonPrestito, $connector)
                             $decode["DataInizioPrestito"]->DataInizioPrestito,
                             $decode["DataFinePrestito"]->DataFinePrestito);
     
-    $query ="INSERT INTO libriutenti (IdUtente,IdLibro,DataInizioPrestito,DataFinePrestito) 
+    $query ="INSERT INTO LibriUtenti (IdUtente,IdLibro,DataInizioPrestito,DataFinePrestito) 
              VALUE (:IdUtente,:IdLibro,:DataInizioPrestito,:DataFinePrestito)";
     $stmt = $connector->prepare($query);
     $stmt->bindParam(':IdUtente',$prestito->IdUtente,PDO::PARAM_STR);
@@ -41,7 +41,7 @@ function Create($jsonPrestito, $connector)
     $stmt->bindParam(':DataInizioPrestito',$prestito->DataInizioPrestito,PDO::PARAM_STR);
     $stmt->bindParam(':DataFinePrestito',$prestito->DataFinePrestito,PDO::PARAM_STR);
     if($stmt->execute()){
-        $returnIdquery ="SELECT IdUtente from libriutenti WHERE IdUtente=:IdUtente LIMIT 1";
+        $returnIdquery ="SELECT IdUtente from LibriUtenti WHERE IdUtente=:IdUtente LIMIT 1";
         $stmt = $connector->prepare($returnIdquery);
         $stmt->bindParam(':IdUtente',$prestito->IdUtente,PDO::PARAM_STR);
         $stmt->execute();
@@ -57,7 +57,7 @@ function Create($jsonPrestito, $connector)
 
 function Read($connector)
 {
-    $query ="SELECT * FROM libriutenti ";
+    $query ="SELECT * FROM LibriUtenti ";
     $stmt = $connector->prepare($query);
     if($stmt->execute()){
         $element = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -82,12 +82,12 @@ function Update($jsonPrestiti, $connector)
         $decode["IdLibro"]->IdLibro,
         $decode["DataInizioPrestito"]->DataInizioPrestito,
         $decode["DataFinePrestito"]->DataFinePrestito);
-    $query ="UPDATE libriutenti SET IdUtente=:id WHERE IdUtente=:id";
+    $query ="UPDATE LibriUtenti SET IdUtente=:id WHERE IdUtente=:id";
     $stmt = $connector->prepare($query);
     $stmt->bindParam(':id',$prestito->IdUtente,PDO::PARAM_INT);
 
     if($stmt->execute()){
-        $returnIdquery ="SELECT IdLibro from libriutenti WHERE IdLibro=:id LIMIT 1";
+        $returnIdquery ="SELECT IdLibro from LibriUtenti WHERE IdLibro=:id LIMIT 1";
         $stmt = $connector->prepare($returnIdquery);
         $stmt->bindParam(':id',$prestito->IdLibro,PDO::PARAM_STR);
         $stmt->execute();
@@ -104,7 +104,7 @@ function Update($jsonPrestiti, $connector)
 
 function Delete($id , $connector)
 {
-    $query ="DELETE FROM libriutenti WHERE IdUtente=:id";
+    $query ="DELETE FROM LibriUtenti WHERE IdUtente=:id";
     $stmt = $connector->prepare($query);
     $stmt->bindParam(':id',$id);
     if($stmt->execute()){
