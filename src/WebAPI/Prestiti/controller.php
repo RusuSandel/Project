@@ -55,7 +55,7 @@ function Create($jsonPrestito, $connector)
              VALUE (:IdUtente,:IdLibro,:DataInizioPrestito,:DataFinePrestito)";
 
     $queryLibri ="UPDATE Libri SET IdUtentePrestito=:IdUtente,Stato='N', DataInizioPrestito=:DataInizioPrestito, 
-                  DataFinePrestitoPrevista=:DataFinePrestito WHERE Id=:id";
+                  DataFinePrestitoPrevista=:DataFinePrestito WHERE Id=:IdLibro";
     $resultQuery = Bind($connector,$query,$prestito);
     $resultQueryLibri = Bind($connector,$queryLibri,$prestito);
     if($resultQuery  == true && $resultQueryLibri == true) {
