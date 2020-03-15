@@ -24,8 +24,14 @@ switch ($method) {
         break;
 }
 
-function Bind($connector,$query,$prestito)
+function Bind($connector,$query,$json)
 {
+    $decode = json_decode($json);
+    $prestito = new Prestiti(
+        $decode["IdUtente"]->IdUtente,
+        $decode["IdLibro"]->IdLibro,
+        $decode["DataInizioPrestito"]->DataInizioPrestito,
+        $decode["DataFinePrestito"]->DataFinePrestito);
     $stmt = $connector->prepare($query);
     $stmt->bindParam(':IdUtente',$prestito->IdUtente,PDO::PARAM_STR);
     $stmt->bindParam(':IdLibro',$prestito->IdLibro,PDO::PARAM_STR);
@@ -42,22 +48,16 @@ function Bind($connector,$query,$prestito)
         return true;
     }
 }
+
 function Create($jsonPrestito, $connector)
 {
-    $decode = json_decode($jsonPrestito);
-    $prestito = new Prestiti(
-                            $decode["IdUtente"]->IdUtente,
-                            $decode["IdLibro"]->IdLibro,
-                            $decode["DataInizioPrestito"]->DataInizioPrestito,
-                            $decode["DataFinePrestito"]->DataFinePrestito);
-    
     $query ="INSERT INTO LibriUtenti (IdUtente,IdLibro,DataInizioPrestito,DataFinePrestito) 
              VALUE (:IdUtente,:IdLibro,:DataInizioPrestito,:DataFinePrestito)";
 
-    $queryLibri ="UPDATE Libri SET IdUtentePrestito=:IdUtente,Stato='N', DataInizioPrestito=:DataInizioPrestito, 
+    $queryLibri ="UPDATE Libri SET IdUtentePrestito=:IdUtente,Stato='P', DataInizioPrestito=:DataInizioPrestito, 
                   DataFinePrestitoPrevista=:DataFinePrestito WHERE Id=:IdLibro";
-    $resultQuery = Bind($connector,$query,$prestito);
-    $resultQueryLibri = Bind($connector,$queryLibri,$prestito);
+    $resultQuery = Bind($connector,$query,$jsonPrestito);
+    $resultQueryLibri = Bind($connector,$queryLibri,$jsonPrestito);
     if($resultQuery  == true && $resultQueryLibri == true) {
         http_response_code(200);
         return true;
@@ -69,7 +69,7 @@ function Create($jsonPrestito, $connector)
 
 function Read($connector)
 {
-    $query ="SELECT * FROM LibriUtenti ";
+    $query ="SELECT * FROM LibriUtenti ORDER BY IdLibro";
     $stmt = $connector->prepare($query);
     if($stmt->execute()){
         $element = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -82,20 +82,13 @@ function Read($connector)
         array("message" => "Nessun prestito nello storico")
     );
     return false;
-
-
 }
 
 function Update($jsonPrestiti, $connector)
 {
-    $decode = json_decode($jsonPrestiti);
-    $prestito = new Prestiti(
-        $decode["IdUtente"]->IdUtente,
-        $decode["IdLibro"]->IdLibro,
-        $decode["DataInizioPrestito"]->DataInizioPrestito,
-        $decode["DataFinePrestito"]->DataFinePrestito);
-    $query ="UPDATE LibriUtenti SET IdUtente=:id,IdLibro=:IdLibro,DataInizioPrestito=:DataInizioPrestito,DataFinePrestito=:DataFinePrestito WHERE IdUtente=:id";
-    $resultQuery = Bind($connector,$query,$prestito);
+    $query ="UPDATE LibriUtenti SET IdUtente=:id,IdLibro=:IdLibro,DataInizioPrestito=:DataInizioPrestito,
+             DataFinePrestito=:DataFinePrestito WHERE IdUtente=:id";
+    $resultQuery = Bind($connector,$query,$jsonPrestiti);
     if($resultQuery  == true) {
         http_response_code(200);
         return true;
@@ -104,17 +97,17 @@ function Update($jsonPrestiti, $connector)
     return false;
 }
 
-function Delete($id , $connector)
+function Delete($jsonPrestiti , $connector)
 {
     $query ="DELETE FROM LibriUtenti WHERE IdUtente=:id";
-    $stmt = $connector->prepare($query);
-    $stmt->bindParam(':id',$id);
-    if($stmt->execute()){
+    $queryLibri ="UPDATE Libri SET IdUtentePrestito=:NULL,Stato='N', DataInizioPrestito=:NULL, 
+                  DataFinePrestitoPrevista=:NULL WHERE Id=:IdLibro";
+    $resultQuery = Bind($connector,$query,$jsonPrestiti);
+    $resultQueryLibri = Bind($connector,$queryLibri,$jsonPrestiti);
+    if($resultQuery  == true && $resultQueryLibri == true){
         http_response_code(200);
-        echo $id;
         return true;
     }
-    
     http_response_code(503);
     echo json_encode(array("message" => "Impossibile cancellare il prestito."));
     return false;

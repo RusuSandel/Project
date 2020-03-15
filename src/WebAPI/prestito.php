@@ -50,7 +50,7 @@ function Create($jsonLibroUtente, $connector)
 
 function UpdateLibri($connector,$idutente,$idlibro,$dataInizioPrestito,$dataFinePrestitoPrevista)
 {
-    $query ="UPDATE Libri SET IdUtentePrestito=:utente,Stato='N', DataInizioPrestito=:dataI, DataFinePrestitoPrevista=:dataF WHERE Id=:id";
+    $query ="UPDATE Libri SET l=:utente,Stato='N', DataInizioPrestito=:dataI, DataFinePrestitoPrevista=:dataF WHERE Id=:id";
     $stmt = $connector->prepare($query);
 
     $stmt->bindParam(':dataI',$dataInizioPrestito,PDO::PARAM_INT);
