@@ -84,26 +84,27 @@ function Read($connector)
     return false;
 }
 
-function Update($jsonPrestiti, $connector)
+function Update($jsonPrestito, $connector)
 {
     $query ="UPDATE LibriUtenti SET IdUtente=:id,IdLibro=:IdLibro,DataInizioPrestito=:DataInizioPrestito,
-             DataFinePrestito=:DataFinePrestito WHERE IdUtente=:id";
-    $resultQuery = Bind($connector,$query,$jsonPrestiti);
+             DataFinePrestito=:DataFinePrestito WHERE IdUtente=:IdUtente";
+    $resultQuery = Bind($connector,$query,$jsonPrestito);
     if($resultQuery  == true) {
         http_response_code(200);
         return true;
-    }    http_response_code(503);
+    }
+    http_response_code(503);
     echo json_encode(array("message" => "Impossibile aggiornare il prestito."));
     return false;
 }
 
-function Delete($jsonPrestiti , $connector)
+function Delete($jsonPrestito, $connector)
 {
-    $query ="DELETE FROM LibriUtenti WHERE IdUtente=:id";
+    $query ="DELETE FROM LibriUtenti WHERE IdUtente=:IdUtente";
     $queryLibri ="UPDATE Libri SET IdUtentePrestito=:NULL,Stato='N', DataInizioPrestito=:NULL, 
                   DataFinePrestitoPrevista=:NULL WHERE Id=:IdLibro";
-    $resultQuery = Bind($connector,$query,$jsonPrestiti);
-    $resultQueryLibri = Bind($connector,$queryLibri,$jsonPrestiti);
+    $resultQuery = Bind($connector,$query,$jsonPrestito);
+    $resultQueryLibri = Bind($connector,$queryLibri,$jsonPrestito);
     if($resultQuery  == true && $resultQueryLibri == true){
         http_response_code(200);
         return true;
