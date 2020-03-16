@@ -21,22 +21,16 @@
     <header>
       <h1>BiblioLevi</h1>
       <button1 onclick="Show_Tendina()" type="button" class="button_login" > LOGIN </button1>
-      <!--Ho inserito un button di logout che adesso è invisibile ma che una volta loggato diventerà visibilè e
-      quello di login invisibile... -->
-      <!--Stavo pensando se è meglio tenere comunque un button per far vedere la tendina in cui ci sono i dati di chi
-       si è loggato e nella tendina mettere il button logut -->
       <button1 id="btn_logout" type="button" class="button_logut" > LOGUT </button1>
           <div class="tendina">
             <div id="Tendina" class="tendina_contenuti">
               <ul>
                 <ul>
-                  <input id="username"placeholder="username" type="text">
-                  <input id="password"placeholder="password" type="text">
-                  <button type="button" id="accedi">ACCEDI </button> <br>
-                  <comment id="txt_ospite">Accesso come: </comment> <a id="utenza">OSPITE</a>
-                  <!--Sarbbe carino modificare la scritta ospiti quando si effettua il login con l'username della
-                   persona loggata... Più avanti inserirò una variabile e belletz la modificherà attraverso json
-                   nella procedura di login -->
+                  <input type="text" id="username"placeholder="username">
+                  <input type="text"id="password"placeholder="password" >
+                  <button type="button" id="accedi">ACCEDI </button>
+                  <input type="text" id="utenza" disabled="disabled" value="Accesso come: OSPITE ">
+
                 </ul>
               </ul>
             </div>

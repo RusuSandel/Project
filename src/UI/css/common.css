@@ -162,16 +162,22 @@ tr:hover{
 }
 
 #username{
+  top: 5px;
+  left: 10px;
   position: relative;
   height: 20px;
   line-height: 20px;
-  width: 210px;
+  width: 160px;
   border-radius: 3px;
 }
 
 #password{
+  top: 5px;
+  left: 10px;
   position: relative;
+  height: 20px;
   line-height: 20px;
+  width: 160px;
   border-radius: 3px;
 }
 
@@ -199,13 +205,14 @@ tr:hover{
   cursor: pointer;
   border: 2px solid #F2F2F2;
 }
-.button_login:hover, .button_login:focus ,.button_accedi{
+.button_login:hover, .button_login:focus , .button_logut:focus{
   background-color: rgba(97, 34, 185, 0.83);
+
 }
 .tendina {
   position: absolute;
   right: 150px;
-  top: 60px;
+  top: 40px;
   width: 60px;
   color: black;
   border-radius: 10%;
@@ -216,7 +223,7 @@ tr:hover{
   display: none;
   position: relative;
   width: 200px;
-  height: 150px;
+  height: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   border-radius: 10%;
@@ -230,9 +237,45 @@ tr:hover{
   max-width: 100px;
 }
 
-.button_accedi_tendina{
+#accedi{left: 10px;
   position: relative;
-  max-height: 30px;
-  max-width: 45px;
+  vertical-align: middle;
+  font-size: 15px;
+  color: 118, 48, 217, 0.3;
+  font-family: 'Righteous', cursive;
+  border-radius: 10%;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #F2F2F2;
+}
 
+.button_logut{
+ visibility: hidden;
+  position: absolute;
+  right: 30px;
+  top: 13px;
+  vertical-align: middle;
+  font-size: 30px;
+  color: #ffffff;
+  font-family: 'Righteous', cursive;
+  border-radius: 10%;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #F2F2F2;
+}
+
+#utenza{
+  position: relative;
+  left:10px;
+  font-size: 14px;
+  color: 118, 48, 217, 0.3;
+  font-family: 'Righteous', cursive;
+  border-radius: 10%;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #F2F2F2;
+}
+
+#utenza:hover,#accedi:hover{
+    background-color: #a886c1;
 }
