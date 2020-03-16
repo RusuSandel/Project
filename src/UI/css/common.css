@@ -167,8 +167,9 @@ tr:hover{
   position: relative;
   height: 20px;
   line-height: 20px;
-  width: 160px;
+  width: 175px;
   border-radius: 3px;
+
 }
 
 #password{
@@ -177,7 +178,7 @@ tr:hover{
   position: relative;
   height: 20px;
   line-height: 20px;
-  width: 160px;
+  width: 175px;
   border-radius: 3px;
 }
 
@@ -236,7 +237,6 @@ tr:hover{
   max-height: 10px;
   max-width: 100px;
 }
-
 #accedi{left: 10px;
   position: relative;
   vertical-align: middle;
