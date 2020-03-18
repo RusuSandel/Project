@@ -377,6 +377,20 @@ $(document).ready(
                     $("#Prestiti_Utenti_Button").click();
                     break;
 
+          case "PrestitiAttivi" :
+                    $("main").html("<div id=\"content\"></div>");
+                    $("#content").append(prestitiattivi);
+                    $("#Prestiti_Attivi_Button").click();
+                              break;
+/*
+          case "PrestitiStorico" :
+                    $("main").html("<div id=\"content\"></div>");
+                    $("#content").append(prestistorico);
+                    $("#Prestiti_Storico_Button").click();
+                    break;
+*/
+
+
             case "Libri":
             $("main").html("<div id=\"content\"></div>");
             $("#content").append(editLibriDebug);

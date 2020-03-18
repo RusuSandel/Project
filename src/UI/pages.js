@@ -143,3 +143,10 @@ var cercaUser = "<p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input
             "<p class=\"inputdesc\">Codice Fiscale</p><input type=\"text\" class=\"input\" id=\"UserCF\"><br>" +
             "<p class=\"inputdesc\">E-Mail</p><input type=\"text\" class=\"input\" id=\"UserMail\"><br>" +
             "<button class=\"submitsearch\" type=\"submit\" name=\"Prestiti_Utenti_Button\">Ricerca Utente</button>";
+
+      var prestitiattivi =  
+      "<button class=\"submitsearch\" type=\"submit\" name=\"Prestiti_Storico_Button\">Ricerca Utente</button>";
+
+
+      var prestistorico =
+      "<button class=\"submitsearch\" type=\"submit\" name=\"Prestiti_Storico_Button\">Ricerca Utente</button>";
