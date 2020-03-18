@@ -6,9 +6,9 @@ $(document).ready(
     var logged = false;
     console.log(localStorage);
     if (localStorage.getItem("token") !== null) {
-      $("#usernametext").html("Benvenuto, " + localStorage.getItem('username'));
-      $("#username").remove();
-      $("#password").remove();
+      $("#utenza").val("Benvenuto, " + localStorage.getItem('username'));
+      $("#username").html(" ");
+      $("#password").html(" ");
       logged = true;
       $.ajax(
         {
@@ -57,10 +57,8 @@ $(document).ready(
               localStorage.setItem('token', token);
               localStorage.setItem('username', $("#username").val());
               console.log(localStorage);
-              var username = $("#username").val();
-              $("#usernametext").html("Benvenuto, " + username);
-              $("#usernamec").html("");
-              $("#passwordc").html("");
+              $("#username").html("");
+              $("#password").html("");
               $("main").html("<div id=\"content\"></div>");
               $.ajax(
                 {
@@ -102,8 +100,8 @@ $(document).ready(
           logged = false;
           localStorage.clear();
           $("#usernametext").html("");
-          $("#usernamec").html("<input type=\"text\" id=\"username\" placeholder=\"username\"></input>");
-          $("#passwordc").html("<input type=\"password\" id=\"password\" placeholder=\"password\"></input>");
+          $("#username").html("<input type=\"text\" id=\"username\" placeholder=\"username\"></input>");
+          $("#password").html("<input type=\"password\" id=\"password\" placeholder=\"password\"></input>");
         }
       }
     );
