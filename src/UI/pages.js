@@ -134,4 +134,12 @@ var cercaUser = "<p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input
         "<input type=\"text\" style=\"display: none\" id=\"LibroAutoreHidden\">" +
         "<input type=\"text\" style=\"display: none\" id=\"LibroGenereHidden\">" +
         "<input type=\"text\" style=\"display: none\" id=\"LibroCasaEditriceHidden\">" +
-        "<button id=\"Prestiti_lbiri_Button\" class=\"submitsearch\" type=\"submit\" name=\"Prestiti_lbiri_Button\">Ricerca</button>";
+        "<button id=\"Prestiti_lbiri_Button\" class=\"submitsearch\" type=\"submit\" name=\"Prestiti_Libiri_Button\">Ricerca</button>";
+
+        var utentiprestiti = "<p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input\" id=\"UserId\"><br>" +
+            "<p class=\"inputdesc\">Nome</p><input type=\"text\" class=\"input\" id=\"UserNome\"><br>" +
+            "<p class=\"inputdesc\">Cognome</p><input type=\"text\" class=\"input\" id=\"UserCognome\"><br>" +
+            "<p class=\"inputdesc\">Telefono</p><input type=\"text\" class=\"input\" id=\"UserTelefono\"><br>" +
+            "<p class=\"inputdesc\">Codice Fiscale</p><input type=\"text\" class=\"input\" id=\"UserCF\"><br>" +
+            "<p class=\"inputdesc\">E-Mail</p><input type=\"text\" class=\"input\" id=\"UserMail\"><br>" +
+            "<button class=\"submitsearch\" type=\"submit\" name=\"Prestiti_Utenti_Button\">Ricerca Utente</button>";

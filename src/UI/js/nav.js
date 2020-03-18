@@ -365,12 +365,19 @@ $(document).ready(
             );
             break;
             //BELLETZ NOW
-            case "PrestitiLibri" :
+          case "PrestitiLibri" :
                 $("main").html("<div id=\"content\"></div>");
                 $("#content").append(libriprestiti);
-                $("#Prestiti_lbiri_Button").click();
+                $("#Prestiti_Libiri_Button").click();
                 break;
-          case "Libri":
+
+          case "PrestitiUtenti" :
+                    $("main").html("<div id=\"content\"></div>");
+                    $("#content").append(utentiprestiti);
+                    $("#Prestiti_Utenti_Button").click();
+                    break;
+
+            case "Libri":
             $("main").html("<div id=\"content\"></div>");
             $("#content").append(editLibriDebug);
             $("#LibroAutore").keyup(
