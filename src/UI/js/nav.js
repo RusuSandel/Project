@@ -8,6 +8,19 @@ $(document).ready(
         $(".selected").attr("class", "");
         $(this).parent().attr("class", "selected");
         switch (cliccato) {
+//CODICI DI RUSU
+          case "PrestitiLibri" :
+          $("main").html("<div id=\"content\"></div>");
+          $("#content").append(libriprestiti);
+          $("#Prestiti_lbiri_Button").click();
+          break;
+
+
+
+
+
+
+//CODICI VECCHIO PROGETTO
           case "Autori":
             $("main").html("<div id=\"content\"></div>");
             $("#content").append(cercaAutori);

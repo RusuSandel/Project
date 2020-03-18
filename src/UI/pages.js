@@ -119,3 +119,19 @@ var cercaUser = "<p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input
     "<p class=\"inputdesc\">Disabilitato</p><input type=\"checkbox\" class=\"input\" id=\"UserDisabilitato\"><br>" +
     "<button class=\"submitsearch\" type=\"submit\" name=\"usersubmit\">Aggiungi Utente</button>";
 
+
+//codici RUSU
+  var libriprestiti = "<p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input\" id=\"LibroId\"><br>" +
+        "<p class=\"inputdesc\">ISBN</p><input type=\"text\" class=\"input\" id=\"LibroISBN\"><br>" +
+        "<p class=\"inputdesc\">Codice</p><input type=\"text\" class=\"input\" id=\"LibroCodice\"><br>" +
+        "<p class=\"inputdesc\">Titolo</p><input type=\"text\" class=\"input\" id=\"LibroTitolo\"><br>" +
+        "<p class=\"inputdesc\">Autore</p><input type=\"text\" placeholder=\"Cognome Nome\" class=\"input\" id=\"LibroAutore\"><br>" +
+        "<p class=\"inputdesc\">Genere</p><input type=\"text\" class=\"input\" id=\"LibroGenere\"><br>" +
+        "<p class=\"inputdesc\">Anno Pubblicazione da / a:</p><input type=\"date\" class=\"input\" id=\"LibroAnnoDa\">" +
+        "<input type=\"date\" class=\"input\" id=\"LibroAnnoA\"><br>" +
+        "<p class=\"inputdesc\">Casa Editrice</p><input type=\"text\" class=\"input\" id=\"LibroCasaEditrice\"><br>" +
+        "<input type=\"text\" class=\"input\" id=\"LibroArmadio\"><br>" +
+        "<input type=\"text\" style=\"display: none\" id=\"LibroAutoreHidden\">" +
+        "<input type=\"text\" style=\"display: none\" id=\"LibroGenereHidden\">" +
+        "<input type=\"text\" style=\"display: none\" id=\"LibroCasaEditriceHidden\">" +
+        "<button id=\"Prestiti_lbiri_Button\" class=\"submitsearch\" type=\"submit\" name=\"Prestiti_lbiri_Button\">Ricerca</button>";
