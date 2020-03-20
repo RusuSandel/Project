@@ -1,0 +1,75 @@
+* {box-sizing : border-box ;}
+body{
+  margin : 0;
+  padding : 0;
+  font-family : monospace;
+}
+
+.preload {
+  width : 100%;
+  height: 100%;
+  background : #9900cc;
+  position : fixed;
+  top : 0;
+  left : 0;
+  z-index : 1;
+}
+
+.logo {
+  font-size : 50px;
+  text-shadow : -1px 2px 2px #000;
+  text-align : center;
+  color : #000;
+  animation: dissolvenzalogo 2s linear;
+}
+
+.loader{
+  width : 70px;
+  height: 70px;
+  margin : auto;
+  position : relative;
+}
+
+.loaderbig, .loadersmall {
+  position : absolute;
+  border : 5px solid trasparent;
+  border-radius : 50%;
+}
+
+.loaderbig {
+  width: 70px;
+  height: 70px;
+  border-top : 5px solid pink;
+  border-bottom : 5px solid black;
+  animation: clockwiseloader 2s linear 3;
+}
+
+.loadersmall {
+  width : 60px;
+  height : 60px;
+  border-left: 5px solid black;
+  border-right: 5px solid pink;
+  animation: anticlockwiseloader 2s linear 3;
+  top: 5px;
+  left:5px;
+}
+
+@keyframes  clockwiseloader{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes anticlockwiseloader{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(-360deg);}
+}
+
+@keyframes dissolvenzalogo {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+@keyframes dissolvenza {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
