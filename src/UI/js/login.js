@@ -2,6 +2,7 @@ $(document).ready(
   function(){
     $("#ricercamenu").show();
     $("main").html("<div id=\"content\"></div>");
+    $("#btn_logout").hide();
     var utente;
     var logged = false;
     console.log(localStorage);
@@ -22,11 +23,13 @@ $(document).ready(
               case "0":
               $("#ricercamenu").show();
               $("#editmenu").show();
+
               break;
 
               case "1":
               $("#ricercamenu").show();
               $("#editmenu").hide();
+
               break;
 
               default:
@@ -57,8 +60,12 @@ $(document).ready(
               localStorage.setItem('token', token);
               localStorage.setItem('username', $("#username").val());
               console.log(localStorage);
-              $("#username").html("");
-              $("#password").html("");
+              $("#username").hide();
+              $("#password").hide();
+              $("#accedi").hide();
+              $(".button_login").hide();
+              $("#btn_logout").show();
+              $("#Tendina").html("<ul><input type=\"text\" id=\"utenza\" disabled=\"disabled\" value=\"Accesso come: OSPITE \"></ul>");
               $("main").html("<div id=\"content\"></div>");
               $.ajax(
                 {
@@ -68,6 +75,7 @@ $(document).ready(
                   dataType: "json",
                   success: function(user){
                     utente = user;
+                    $("#utenza").val("Benvenuto, " + localStorage.getItem('username'));
                     switch (utente.LivelloUtente) {
                       case "0":
                       $("#ricercamenu").show();
@@ -105,7 +113,18 @@ $(document).ready(
         }
       }
     );
+    $("#btn_logout").click(
+          function () {
+              logged=false;
+              utente=null;
+              localStorage.clear();
+              $("#Tendina").html("<ul><input type=\"text\" id=\"username\" placeholder=\"username\">" +
+                  "<input type=\"password\" id=\"password\" placeholder=\"password\">" +
+                  "<button type=\"button\" id=\"accedi\">ACCEDI </button>" +
+                  "<input type=\"text\" id=\"utenza\" disabled=\"disabled\" value=\"Accesso come: OSPITE \"></ul>");
+              $("#btn_logout").hide();
+              $(".button_login").show();
+          }
+    );
   }
-
-
 );

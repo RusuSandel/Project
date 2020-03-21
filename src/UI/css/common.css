@@ -248,9 +248,19 @@ tr:hover{
   cursor: pointer;
   border: 2px solid #F2F2F2;
 }
-
+#logou{
+  left: 10px;
+  position: relative;
+  vertical-align: middle;
+  font-size: 15px;
+  color: 118, 48, 217, 0.3;
+  font-family: 'Righteous', cursive;
+  border-radius: 10%;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid #F2F2F2;
+}
 .button_logut{
- visibility: hidden;
   position: absolute;
   right: 30px;
   top: 13px;
