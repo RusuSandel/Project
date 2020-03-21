@@ -374,13 +374,34 @@ $(document).ready(
           case "PrestitiUtenti" :
                     $("main").html("<div id=\"content\"></div>");
                     $("#content").append(utentiprestiti);
-                    $("#Prestiti_Utenti_Button").click();
+                    $("#Prestiti_Utenti_Button").click(
+                        function () {
+
+                        }
+                    );
                     break;
 
           case "PrestitiAttivi" :
                     $("main").html("<div id=\"content\"></div>");
                     $("#content").append(prestitiattivi);
-                    $("#Prestiti_Attivi_Button").click();
+                    $("#Prestiti_Attivi_Button").click(
+                        function () {
+                            $.ajax({
+                                type: "GET",
+                                url:"../WebAPI/Prestiti/controller.php",
+                                dataType:"json",
+                                success:function (data) {
+                                    console.log(data);
+                                    $("main").html("<table></table>");
+                                    $.each(data, function(index, element) {
+                                        $("table").append("<tr> <td>IdUtente: "+ element.IdUtente + "</td><td>IdLibro: " + element.IdLibro + "</td><td>DataInizio: " + element.DataInizioPrestito + "</td><td>DataFine: " + element.DataFinePrestito + "</td></tr>");
+                                    });
+                                },
+
+                            }
+                            );
+                        }
+                    );
                               break;
 /*
           case "PrestitiStorico" :

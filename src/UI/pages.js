@@ -145,7 +145,7 @@ var cercaUser = "<p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input
             "<button class=\"submitsearch\" type=\"submit\" name=\"Prestiti_Utenti_Button\">Ricerca Utente</button>";
 
       var prestitiattivi =  
-      "<button class=\"submitsearch\" type=\"submit\" name=\"Prestiti_Storico_Button\">Ricerca Utente</button>";
+      "<button class=\"submitsearch\" type=\"submit\" id=\"Prestiti_Attivi_Button\" name=\"Prestiti_Storico_Button\">Prestiti Storico</button>";
 
 
       var prestistorico =
