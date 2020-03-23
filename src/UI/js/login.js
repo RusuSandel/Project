@@ -23,13 +23,11 @@ $(document).ready(
               case "0":
               $("#ricercamenu").show();
               $("#editmenu").show();
-
               break;
 
               case "1":
               $("#ricercamenu").show();
               $("#editmenu").hide();
-
               break;
 
               default:
@@ -118,12 +116,7 @@ $(document).ready(
               logged=false;
               utente=null;
               localStorage.clear();
-              $("#Tendina").html("<ul><input type=\"text\" id=\"username\" placeholder=\"username\">" +
-                  "<input type=\"password\" id=\"password\" placeholder=\"password\">" +
-                  "<button type=\"button\" id=\"accedi\">ACCEDI </button>" +
-                  "<input type=\"text\" id=\"utenza\" disabled=\"disabled\" value=\"Accesso come: OSPITE \"></ul>");
-              $("#btn_logout").hide();
-              $(".button_login").show();
+              window.open("../UI/index.html","_self");
           }
     );
   }

@@ -6,7 +6,7 @@
   function frame(){
     if (loading == 100){
       clearInterval(id);
-      window.open("Benvenuto.html", "_self");
+      window.open("../src/UI/index.html", "_self");
     }
     else {
       loading = loading+1;

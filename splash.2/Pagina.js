@@ -4,9 +4,9 @@
   var id = setInterval(frame, 64);
 
   function frame(){
-    if (loading == 100){
+    if (loading == 40){
       clearInterval(id);
-      window.open("index.html", "_self");
+      window.open("../src/UI/index.html", "_self");
     }
     else {
       loading = loading+1;
