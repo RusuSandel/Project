@@ -39,7 +39,7 @@ $(document).ready(
             console.log(localStorage.getItem("token"));
         }
 
-
+//Comment
         $("#accedi").click(
             function(){
                 if (logged == false) {
