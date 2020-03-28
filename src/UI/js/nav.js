@@ -404,13 +404,13 @@ $(document).ready(
                         }
                     );
                               break;
-/*
+
           case "PrestitiStorico" :
                     $("main").html("<div id=\"content\"></div>");
                     $("#content").append(prestistorico);
                     $("#Prestiti_Storico_Button").click();
                     break;
-*/
+
 
 
             case "Libri":
