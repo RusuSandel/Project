@@ -117,7 +117,7 @@ var cercaUser = "<p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input
     "<p class=\"inputdesc\">Username</p><input type=\"text\" class=\"input\" id=\"UserUsername\"><br>" +
     "<p class=\"inputdesc\">Password</p><input type=\"password\" class=\"input\" id=\"UserPassword\"><br>" +
     "<p class=\"inputdesc\">Disabilitato</p><input type=\"checkbox\" class=\"input\" id=\"UserDisabilitato\"><br>" +
-    "<button class=\"submitsearch\" type=\"submit\" name=\"usersubmit\">Aggiungi Utente</button>";
+    "<button class=\"submitsearch\" type=\"submit\" name=\"usersubmit\">Cerca Utente</button>";
 
 
 //codici RUSU
@@ -134,7 +134,8 @@ var cercaUser = "<p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input
         "<input type=\"text\" style=\"display: none\" id=\"LibroAutoreHidden\">" +
         "<input type=\"text\" style=\"display: none\" id=\"LibroGenereHidden\">" +
         "<input type=\"text\" style=\"display: none\" id=\"LibroCasaEditriceHidden\">" +
-        "<button id=\"Prestiti_lbiri_Button\" class=\"submitsearch\" type=\"submit\" name=\"Prestiti_Libiri_Button\">Ricerca</button>";
+        "<button id=\"Prestiti_lbiri_Button\" type=\"submit\" name=\"Prestiti_Libiri_Button\">Ricerca</button>"+
+        "<button id=\"Prestiti_Storico_lbiri_Button\" type=\"submit\" name=\"Prestiti_Storico_Libiri_Button\">Ricerca Storico</button>";
 
         var utentiprestiti = "<p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input\" id=\"UserId\"><br>" +
             "<p class=\"inputdesc\">Nome</p><input type=\"text\" class=\"input\" id=\"UserNome\"><br>" +
@@ -145,8 +146,6 @@ var cercaUser = "<p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input
             "<button class=\"submitsearch\" type=\"submit\" name=\"Prestiti_Utenti_Button\">Ricerca Utente</button>";
 
       var prestitiattivi =  
-      "<button class=\"submitsearch\" type=\"submit\" id=\"Prestiti_Attivi_Button\" name=\"Prestiti_Storico_Button\">Prestiti Storico</button>";
+      "<button class=\"submitsearch\" type=\"submit\" id=\"Prestiti_Attivi_Button\" name=\"Prestiti_Attivi_Button\">Prestiti Attivi</button>";
 
 
-      var prestistorico =
-      "<button class=\"submitsearch\" type=\"submit\" name=\"Prestiti_Storico_Button\">Ricerca Utente</button>";

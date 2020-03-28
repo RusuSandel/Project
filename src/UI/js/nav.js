@@ -369,7 +369,16 @@ $(document).ready(
           case "PrestitiLibri" :
                 $("main").html("<div id=\"content\"></div>");
                 $("#content").append(libriprestiti);
-                $("#Prestiti_Libiri_Button").click();
+                $("#Prestiti_Libiri_Button").click(
+                    function () {
+
+                    }
+                );
+                $("Prestiti_Storico_lbiri_Button").click(
+                    function () {
+
+                    }
+                );
                 break;
 
           case "PrestitiUtenti" :
@@ -404,13 +413,6 @@ $(document).ready(
                         }
                     );
                               break;
-
-          case "PrestitiStorico" :
-                    $("main").html("<div id=\"content\"></div>");
-                    $("#content").append(prestistorico);
-                    $("#Prestiti_Storico_Button").click();
-                    break;
-
 
 
             case "Libri":
