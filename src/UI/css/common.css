@@ -103,6 +103,32 @@ p{
   margin-bottom: 5px;
 }
 
+
+#Prestiti_Storico_lbiri_Button{
+margin-left: 10px;
+  margin-top: 15px;
+  border: 0px;
+  background: #dcdcdc;
+  outline: none;
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid #7630D9;
+  color: #7630D9;
+  border-radius: 3px;
+}
+
+#Prestiti_lbiri_Button{
+  margin-top: 15px;
+  border: 0px;
+  background: #dcdcdc;
+  outline: none;
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid #7630D9;
+  color: #7630D9;
+  border-radius: 3px;
+}
+
 .submitsearch{
   margin-top: 15px;
   border: 0px;
@@ -114,6 +140,7 @@ p{
   color: #7630D9;
   border-radius: 3px;
 }
+
 
 .websearch{
   margin-top: 15px;
