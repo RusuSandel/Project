@@ -369,12 +369,41 @@ $(document).ready(
           case "PrestitiLibri" :
                 $("main").html("<div id=\"content\"></div>");
                 $("#content").append(libriprestiti);
-                $("#Prestiti_Libiri_Button").click(
+                $("#Prestiti_libri_Button").click(
                     function () {
-
+                        var libro = {};
+                        libro.Id = $("#LibroId").val();
+                        libro.ISBN = $("#LibroISBN").val();
+                        libro.Codice = $("#LibroCodice").val();
+                        libro.Titolo = $("#LibroTitolo").val();
+                        libro.CognomeAutore= $("#LibroAutore").val().split(" ")[0];
+                        libro.NomeAutore= $("#LibroAutore").val().split(" ");
+                        libro.IdGenere = $("#LibroGenere").val();
+                        libro.AnnoDa = $("#LibroAnnoDa").val();
+                        libro.AnnoA = $("#LibroAnnoA").val();
+                        console.log(JSON.stringify(libro));
+                        $.ajax({
+                            type: "GET",
+                            url: "../WebAPI/Prestiti/ricercaPrestiti.php",
+                            data:{id:libro.Id,ISBN:libro.ISBN,Codice:libro.Codice,Titolo:libro.Titolo,CognomeAutore:libro.CognomeAutore,
+                                  NomeAutore:libro.NomeAutore,IdGenere:libro.IdGenere,AnnoDa:libro.AnnoDa,AnnoA:libro.AnnoA},
+                            dataType: "json",
+                            success: function(data) {
+                                console.log(data);
+                                $("main").html("<table></table>");
+                                $.each(data, function(index, element) {
+                                    $("table").append("<tr><td>Titolo: "+ element.Titolo + "</td><td>ISBN: " + element.ISBN+ "</td><td>Autore: " + element.Cognome+' '+element.Nome+ "</td><td>STATO: " + element.Stato + "</td><td>Data Fine Prestito: " + element.DataFinePrestitoPrevista + "</td></tr>");
+                                });
+                                alert("Operazione Completata");
+                            },
+                            error: function(xhr, ajaxOptions, thrownError) {
+                                console.log(xhr.status);
+                                console.log(thrownError);
+                            }
+                        });
                     }
                 );
-                $("Prestiti_Storico_lbiri_Button").click(
+                $("#Prestiti_Storico_libri_Button").click(
                     function () {
 
                     }

@@ -121,21 +121,21 @@ var cercaUser = "<p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input
 
 
 //codici RUSU
-  var libriprestiti = "<p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input\" id=\"LibroId\"><br>" +
+  var libriprestiti = "<p>INSERISCI ALMENO UN VALORE</p></br><p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input\" id=\"LibroId\"><br>" +
         "<p class=\"inputdesc\">ISBN</p><input type=\"text\" class=\"input\" id=\"LibroISBN\"><br>" +
         "<p class=\"inputdesc\">Codice</p><input type=\"text\" class=\"input\" id=\"LibroCodice\"><br>" +
         "<p class=\"inputdesc\">Titolo</p><input type=\"text\" class=\"input\" id=\"LibroTitolo\"><br>" +
-        "<p class=\"inputdesc\">Autore</p><input type=\"text\" placeholder=\"Cognome Nome\" class=\"input\" id=\"LibroAutore\"><br>" +
+        "<p style='display: none' class=\"inputdesc\">Autore</p><input style='display: none' type=\"text\" placeholder=\"Cognome Nome\" class=\"input\" id=\"LibroAutore\">" +
         "<p class=\"inputdesc\">Genere</p><input type=\"text\" class=\"input\" id=\"LibroGenere\"><br>" +
         "<p class=\"inputdesc\">Anno Pubblicazione da / a:</p><input type=\"date\" class=\"input\" id=\"LibroAnnoDa\">" +
         "<input type=\"date\" class=\"input\" id=\"LibroAnnoA\"><br>" +
         "<p class=\"inputdesc\">Casa Editrice</p><input type=\"text\" class=\"input\" id=\"LibroCasaEditrice\"><br>" +
-        "<input type=\"text\" class=\"input\" id=\"LibroArmadio\"><br>" +
-        "<input type=\"text\" style=\"display: none\" id=\"LibroAutoreHidden\">" +
-        "<input type=\"text\" style=\"display: none\" id=\"LibroGenereHidden\">" +
-        "<input type=\"text\" style=\"display: none\" id=\"LibroCasaEditriceHidden\">" +
-        "<button id=\"Prestiti_lbiri_Button\" type=\"submit\" name=\"Prestiti_Libiri_Button\">Ricerca</button>"+
-        "<button id=\"Prestiti_Storico_lbiri_Button\" type=\"submit\" name=\"Prestiti_Storico_Libiri_Button\">Ricerca Storico</button>";
+        //"<input type=\"text\" class=\"input\" id=\"LibroArmadio\"><br>" +
+        //"<input type=\"text\" style=\"display: none\" id=\"LibroAutoreHidden\">" +
+        //"<input type=\"text\" style=\"display: none\" id=\"LibroGenereHidden\">" +
+        //"<input type=\"text\" style=\"display: none\" id=\"LibroCasaEditriceHidden\">" +
+        "<button id=\"Prestiti_libri_Button\" type=\"submit\" name=\"Prestiti_Libri_Button\">Ricerca</button>"+
+        "<button id=\"Prestiti_Storico_libri_Button\" type=\"submit\" name=\"Prestiti_Storico_Libri_Button\">Ricerca Storico</button>";
 
         var utentiprestiti = "<p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input\" id=\"UserId\"><br>" +
             "<p class=\"inputdesc\">Nome</p><input type=\"text\" class=\"input\" id=\"UserNome\"><br>" +
