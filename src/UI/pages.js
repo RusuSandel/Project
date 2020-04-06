@@ -1,11 +1,11 @@
 var editAutori = "<p class=\"inputdesc\">Nome</p>" +
-    "<input type=\"text\" class=\"input\" id=\"AutoreNome\">" + "</input><br>" +
+    "<input type=\"text\" class=\"input\" id=\"AutoreNome\"><br>" +
     "<p class=\"inputdesc\">Cognome</p>" +
-    "<input type=\"text\" class=\"input\" id=\"AutoreCognome\">" +"</input><br>" +
+    "<input type=\"text\" class=\"input\" id=\"AutoreCognome\"><br>" +
     "<p class=\"inputdesc\">Data nascita/ Data morte:</p>" +
-    "<input type=\"date\" class=\"input\" id=\"AutoreNascita\"></input>" +
-    "<input type=\"date\" class=\"input\" id=\"AutoreMorte\"></input><br>" +
-    "<button class=\"submitsearch\" type=\"submit\" name=\"librisubmit\">Aggiungi Autore</button>"
+    "<input type=\"date\" class=\"input\" id=\"AutoreNascita\">" +
+    "<input type=\"date\" class=\"input\" id=\"AutoreMorte\"><br>" +
+    "<button class=\"submitsearch\" type=\"submit\" name=\"librisubmit\">Aggiungi Autore</button>";
 
 var editCase = "<p class=\"inputdesc\">Nome</p>" +
     "<input type=\"text\" class=\"input\" id=\"CasaNome\"><br>" +

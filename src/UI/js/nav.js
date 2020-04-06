@@ -256,6 +256,7 @@ $(document).ready(
                             casa.Nome = $("#CasaNome").val();
                             casa.Luogo = $("#CasaLuogo").val();
                             console.log(JSON.stringify(casa));
+                            var token = localStorage.getItem("token");
                             $.ajax({
                               type: "POST",
                               url: "../WebAPI/CaseEditrici/controller.php",
@@ -598,12 +599,14 @@ $(document).ready(
                 casa.Nome = $("#CasaNome").val();
                 casa.Luogo = $("#CasaLuogo").val();
                 console.log(JSON.stringify(casa));
+                var token = localStorage.getItem("token");
                 $.ajax({
                   type: "PUT",
                   url: "../WebAPI/CaseEditrici/controller.php",
                   data: JSON.stringify(casa),
                   dataType: "text",
                   contentType: "application/json",
+                    headers: { 'Authorization': `Bearer ${token}` },
                   success: function(data) {
                     console.log(data);
                   },
