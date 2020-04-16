@@ -444,6 +444,12 @@ $(document).ready(
                     );
                               break;
 
+            case "AttivaPrestito" :
+                $("main").html("<div id=\"content\"></div>");
+                $("#content").append(attivaprestito);
+
+                break;
+
 
             case "Libri":
             $("main").html("<div id=\"content\"></div>");
