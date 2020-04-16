@@ -1,7 +1,7 @@
 <?php
 include 'Genere.php';
 require_once '../Common/connection.php';
-
+require_once '../OAuth2/Server.php';
 
 $method= $_SERVER['REQUEST_METHOD'];
 $body= file_get_contents('php://input');
@@ -12,14 +12,24 @@ switch ($method) {
 
         break;
     case "POST":
+        if (!$server->verifyResourceRequest(OAuth2\Request::createFromGlobals())) {
+            $server->getResponse()->send();
+            die;
+        }
         Update($body,$conn);
-
         break;
     case "PUT":
+        if (!$server->verifyResourceRequest(OAuth2\Request::createFromGlobals())) {
+            $server->getResponse()->send();
+            die;
+        }
         Create($body,$conn);
-
         break;
     case "DELETE":
+        if (!$server->verifyResourceRequest(OAuth2\Request::createFromGlobals())) {
+            $server->getResponse()->send();
+            die;
+        }
         Delete($_GET["id"], $conn);
 
         break;

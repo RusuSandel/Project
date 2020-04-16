@@ -11,10 +11,10 @@ switch ($method) {
         Read($_GET["id"], $_GET["nome"], $_GET["luogoSede"],$conn);
         break;
     case "POST":
-        /*if (!$server->verifyResourceRequest(OAuth2\Request::createFromGlobals())) {
+        if (!$server->verifyResourceRequest(OAuth2\Request::createFromGlobals())) {
             $server->getResponse()->send();
             die;
-        }*/
+        }
         Update($body,$conn);
         break;
     case "PUT":
