@@ -105,14 +105,16 @@ $(document).ready(
                             autore.DataDiNascita = $("#AutoreNascita").val();
                             autore.DataDiMorte = $("#AutoreNascita").val();
                             console.log(JSON.stringify(autore));
+                            var token=localStorage.getItem("token");
                             $.ajax({
                               type: "POST",
                               url: "../WebAPI/Autori/controller.php",
                               data: JSON.stringify(autore),
                               dataType: "text",
                               contentType: "application/json",
+                                headers: { 'Authorization': `Bearer ${token}` },
                               success: function(data) {
-                                  alert("Autore inserito correttamente")//alert per validare l'operazione
+                                  alert("Autore inserito correttamente");//alert per validare l'operazione
                                 console.log(data);
                               },
                               error: function(xhr, ajaxOptions, thrownError) {
@@ -128,8 +130,10 @@ $(document).ready(
                       function() {
                         $(this).parent().parent().remove();
                         console.log($(this).attr('numero'));
+                        var token = localStorage.getItem("token");
                         $.ajax({
                           type: "DELETE",
+                          headers: { 'Authorization': `Bearer ${token}` },
                           url: "../WebAPI/Autori/controller.php?id=" + $(this).attr('numero'),
                           success: function() {
                               alert()
@@ -171,8 +175,10 @@ $(document).ready(
                       function() {
                         $(this).parent().parent().remove();
                         console.log($(this).attr('numero'));
+                        var token= localStorage.getItem("token");
                         $.ajax({
                           type: "DELETE",
+                          headers: { 'Authorization': `Bearer ${token}` },
                           url: "../WebAPI/Generi/controller.php?id=" + $(this).attr('numero'),
                           success: function() {
                             console.log("eliminato");
@@ -263,8 +269,9 @@ $(document).ready(
                               data: JSON.stringify(casa),
                               dataType: "text",
                               contentType: "application/json",
+                              headers: { 'Authorization': `Bearer ${token}` },
                               success: function(data) {
-                                  alert("operazione completata")
+                                  alert("operazione completata");
                                 console.log(data);
                               },
                               error: function(xhr, ajaxOptions, thrownError) {
@@ -280,8 +287,10 @@ $(document).ready(
                       function() {
                         $(this).parent().parent().remove();
                         console.log($(this).attr('numero'));
+                        var token = localStorage.getItem("token");
                         $.ajax({
                           type: "DELETE",
+                          headers: { 'Authorization': `Bearer ${token}` },
                           url: "../WebAPI/CaseEditrici/controller.php?id=" + $(this).attr('numero'),
                           success: function() {
                               alert("operazione completata")
@@ -323,12 +332,14 @@ $(document).ready(
                 autore.DataDiNascita = $("#AutoreNascita").val();
                 autore.DataDiMorte = $("#AutoreNascita").val();
                 console.log(JSON.stringify(autore));
+                var token = localStorage.getItem("token");
                 $.ajax({
                   type: "PUT",
                   url: "../WebAPI/Autori/controller.php",
                   data: JSON.stringify(autore),
                   dataType: "text",
                   contentType: "application/json",
+                  headers: { 'Authorization': `Bearer ${token}` },
                   success: function(data) {
                       alert("Operazione Completata");
                     console.log(data);
@@ -349,12 +360,14 @@ $(document).ready(
                 var genere = {};
                 genere.Id = $("#GenereId").val();
                 console.log(JSON.stringify(genere));
+                var token = localStorage.getItem("Token");
                 $.ajax({
                   type: "PUT",
                   url: "../WebAPI/Generi/controller.php",
                   data: JSON.stringify(genere),
                   dataType: "text",
                   contentType: "application/json",
+                  headers: { 'Authorization': `Bearer ${token}` },
                   success: function(data) {
                     console.log(data);
                   },
@@ -606,7 +619,7 @@ $(document).ready(
                   data: JSON.stringify(casa),
                   dataType: "text",
                   contentType: "application/json",
-                    headers: { 'Authorization': `Bearer ${token}` },
+                  headers: { 'Authorization': `Bearer ${token}` },
                   success: function(data) {
                     console.log(data);
                   },
@@ -646,12 +659,14 @@ $(document).ready(
                 user.Username = $("#UserUsername").val();
                 user.Password = $("#UserPassword").val();
                 console.log(JSON.stringify(user));
+                var token = localStorage.getItem("token");
                 $.ajax({
                   type: "PUT",
                   url: "../WebAPI/Utenti/controller.php",
                   data: JSON.stringify(user),
                   dataType: "text",
                   contentType: "application/json",
+                  headers: { 'Authorization': `Bearer ${token}` },
                   success: function(data) {
                     console.log(data);
                   },
@@ -758,12 +773,14 @@ $(document).ready(
                                                 autore.DataDiNascita = $("#AutoreNascita").val();
                                                 autore.DataDiMorte = $("#AutoreNascita").val();
                                                 console.log(JSON.stringify(autore));
+                                                var token = localStorage.getItem("token");
                                                 $.ajax({
                                                     type: "POST",
                                                     url: "../WebAPI/Autori/controller.php",
                                                     data: JSON.stringify(autore),
                                                     dataType: "text",
                                                     contentType: "application/json",
+                                                    headers: { 'Authorization': `Bearer ${token}` },
                                                     success: function(data) {
                                                         console.log(data);
                                                     },
@@ -780,8 +797,10 @@ $(document).ready(
                                     function() {
                                         $(this).parent().parent().remove();
                                         console.log($(this).attr('numero'));
+                                        var token = localStorage.getItem("token");
                                         $.ajax({
                                             type: "DELETE",
+                                            headers: { 'Authorization': `Bearer ${token}` },
                                             url: "../WebAPI/Autori/controller.php?id=" + $(this).attr('numero'),
                                             success: function() {
                                                 console.log("eliminato");
