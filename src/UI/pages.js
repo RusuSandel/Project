@@ -149,7 +149,7 @@ var cercaUser = "<p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input
       "<button class=\"submitsearch\" type=\"submit\" id=\"Prestiti_Attivi_Button\" name=\"Prestiti_Attivi_Button\">Prestiti Attivi</button>";
 
 
-     var attivaprestito = "<p>CAMPI OBBLIGATORI</p></br>" +
+     var attivaprestito = "<p>CAMPI OBBLIGATORI</p></br>" +//
     "<p class=\"inputdesc\">Id Libro</p><input type=\"text\" class=\"input\" id=\"LibroIdPrestito\">" +
     "<p class=\"inputdesc\">Id Persona</p><input type=\"text\" class=\"input\" id=\"PersonaIdPrestito\">  <br>" +
     "Data Inizio Prestito"+"<br>"+"<input type=\"date\" class=\"input\" id=\"DataInzioPrestito\"><br>"+
