@@ -469,6 +469,20 @@ $(document).ready(
                 );
                         break;
 
+            case "ChiudiPrestito" :
+                $("main").html("<div id=\"content\"></div>");
+                $("#content").append(chiudiprestito);
+                $("#Chiusura_Prestiti_Button").click(
+                    function () {
+
+
+
+
+                    }
+                );
+                break;
+
+
 
             case "Libri":
             $("main").html("<div id=\"content\"></div>");
