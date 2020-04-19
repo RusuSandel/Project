@@ -153,5 +153,5 @@ var cercaUser = "<p class=\"inputdesc\">Id</p><input type=\"text\" class=\"input
     "<p class=\"inputdesc\">Id Libro</p><input type=\"text\" class=\"input\" id=\"LibroIdPrestito\">" +
     "<p class=\"inputdesc\">Id Persona</p><input type=\"text\" class=\"input\" id=\"PersonaIdPrestito\">  <br>" +
     "Data Inizio Prestito"+"<br>"+"<input type=\"date\" class=\"input\" id=\"DataInzioPrestito\"><br>"+
-    "<button id=\"Prestiti_libri_Button\" type=\"submit\" name=\"Attiva_Prestito_Button\">Attiva Prestito</button>"
-
+    "Data Fine Prestito"+"<br>"+"<input type=\"date\" class=\"input\" id=\"DataFinePrestito\"><br>"+
+    "<button id=\"Attiva_Prestiti_Button\" type=\"submit\" class=\"submitsearch\" name=\Attiva_Prestiti_Button\">Attiva Prestito</button>"

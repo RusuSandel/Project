@@ -460,8 +460,14 @@ $(document).ready(
             case "AttivaPrestito" :
                 $("main").html("<div id=\"content\"></div>");
                 $("#content").append(attivaprestito);
+                $("#Prestiti_Attivi_Button").click(
+                    function () {
 
-                break;
+
+
+                    }
+                );
+                        break;
 
 
             case "Libri":
