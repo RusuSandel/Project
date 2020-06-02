@@ -23,11 +23,17 @@ $(document).ready(
                             case "0":
                                 $("#ricercamenu").show();
                                 $("#editmenu").show();
+                                $("#adminPrestiti").show();
+                                alert("Loggato");
+
                                 break;
 
                             case "1":
+
                                 $("#ricercamenu").show();
                                 $("#editmenu").hide();
+                                $("#adminPrestiti").hide();
+                                alert("non loggato");
                                 break;
 
                             default:
